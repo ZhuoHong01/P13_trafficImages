@@ -63,20 +63,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 catch(JSONException ignored){
-                    Log.d("exception", ignored.toString());
                 }
 
                 //POINT X – Code to display List View
                 ArrayAdapter<trafficImages> aaTrafficImages = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, alTrafficImages);
                 lvTrafficImages.setAdapter(aaTrafficImages);
             }
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
-                super.onFailure(statusCode, headers, throwable, errorResponse);
-                Log.e("error", errorResponse.toString());
-            }
-
         });
     }//end onResume
 
