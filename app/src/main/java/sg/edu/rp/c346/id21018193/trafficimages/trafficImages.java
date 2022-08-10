@@ -38,10 +38,8 @@ public class trafficImages {
 
     @Override
     public String toString() {
-        return "trafficImages{" +
-                "timestamp='" + timestamp + '\'' +
-                ", image='" + image + '\'' +
-                ", camera_id=" + camera_id +
-                '}';
+        return  "timestamp: " + timestamp + "\n"
+                + "image: " + image  + "\n"
+                + "camera_id=" + camera_id + "\n";
     }
 }

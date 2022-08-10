@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     JSONArray jsonArrItems = response.getJSONArray("items");
                     JSONObject firstObj = jsonArrItems.getJSONObject(0);
-                    JSONArray jsonArrForecasts = firstObj.getJSONArray("forecasts");
+                    JSONArray jsonArrForecasts = firstObj.getJSONArray("cameras");
                     for(int i = 0; i < jsonArrForecasts.length(); i++) {
                         JSONObject jsonObjForecast = jsonArrForecasts.getJSONObject(i);
                         timestamp = jsonObjForecast.getString("timestamp");
