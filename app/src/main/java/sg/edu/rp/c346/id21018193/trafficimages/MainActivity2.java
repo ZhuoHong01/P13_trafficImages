@@ -20,8 +20,7 @@ import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity2 extends AppCompatActivity {
     ListView lvTrafficImages;
     AsyncHttpClient client;
     ImageView iv;
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
 
         lvTrafficImages = findViewById(R.id.listviewTrafficImages);
         iv = findViewById(R.id.imageView);
@@ -58,23 +57,24 @@ public class MainActivity extends AppCompatActivity {
                     JSONArray jsonArrItems = response.getJSONArray("items");
                     JSONObject firstObj = jsonArrItems.getJSONObject(0);
                     JSONArray jsonArrForecasts = firstObj.getJSONArray("cameras");
-                    for (int i = 0; i < jsonArrForecasts.length(); i++) {
+                    for(int i = 0; i < jsonArrForecasts.length(); i++) {
                         JSONObject jsonObjForecast = jsonArrForecasts.getJSONObject(i);
                         timestamp = jsonObjForecast.getString("timestamp");
                         image = jsonObjForecast.getString("image");
-                        Picasso.with(sg.edu.rp.c346.id21018193.trafficimages.MainActivity.this).load(image).into(iv);
+                        Picasso.with(sg.edu.rp.c346.id21018193.trafficimages.MainActivity2.this).load(image).into(iv);
                         camera_id = jsonObjForecast.getInt("camera_id");
                         trafficImages trafficImages = new trafficImages(timestamp, image, camera_id);
                         alTrafficImages.add(trafficImages);
                     }
-                } catch (JSONException ignored) {
+                }
+                catch(JSONException ignored){
 
                     //POINT X – Code to display List View
-                    ArrayAdapter<trafficImages> aaTrafficImages = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, alTrafficImages);
+                    ArrayAdapter<trafficImages> aaTrafficImages = new ArrayAdapter<>(MainActivity2.this, android.R.layout.simple_list_item_1, alTrafficImages);
                     // ca = new CustomAdapter(this, R.layout.row, alTrafficImages);
                     lvTrafficImages.setAdapter(aaTrafficImages);
                 }
             };
-            })//end onResume
-    ;}
+        })//end onResume
+        ;}
 }
