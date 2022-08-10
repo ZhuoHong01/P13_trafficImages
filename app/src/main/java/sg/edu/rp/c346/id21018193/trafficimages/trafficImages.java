@@ -35,7 +35,6 @@ public class trafficImages {
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
-
     @Override
     public String toString() {
         return  "Camera id:  " + camera_id + "\n"
@@ -44,4 +43,5 @@ public class trafficImages {
                 + "" + "\n"
                 + "Image:  " + image  + "\n";
     }
+
 }

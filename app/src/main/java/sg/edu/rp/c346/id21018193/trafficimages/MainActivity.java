@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     ListView lvTrafficImages;
     AsyncHttpClient client;
+    //CustomAdapter ca;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //POINT X – Code to display List View
                 ArrayAdapter<trafficImages> aaTrafficImages = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, alTrafficImages);
+               // ca = new CustomAdapter(this, R.layout.row, alTrafficImages);
                 lvTrafficImages.setAdapter(aaTrafficImages);
             }
         });
