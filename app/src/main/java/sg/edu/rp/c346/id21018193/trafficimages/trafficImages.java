@@ -38,10 +38,10 @@ public class trafficImages {
 
     @Override
     public String toString() {
-        return  "camera_id=" + camera_id + "\n"
+        return  "Camera id:  " + camera_id + "\n"
                 + "" + "\n"
-                + "timestamp: " + timestamp + "\n"
+                + "Timestamp:  " + timestamp + "\n"
                 + "" + "\n"
-                + "image: " + image  + "\n";
+                + "Image:  " + image  + "\n";
     }
 }
