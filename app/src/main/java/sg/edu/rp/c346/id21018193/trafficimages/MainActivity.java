@@ -46,11 +46,11 @@ public class MainActivity extends AppCompatActivity {
             int camera_id;
 
             @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
 
                 try {
-                    JSONArray jsonArrItems = response.getJSONArray(Integer.parseInt("items"));
+                    JSONArray jsonArrItems = response.getJSONArray("items");
                     JSONObject firstObj = jsonArrItems.getJSONObject(0);
                     JSONArray jsonArrForecasts = firstObj.getJSONArray("forecasts");
                     for(int i = 0; i < jsonArrForecasts.length(); i++) {
